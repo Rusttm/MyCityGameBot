@@ -4,18 +4,22 @@ import pandas
 import psycopg2
 import os
 
-
-
+huser=str(os.eviron.get('User_heroku'))
+hpassword=str(os.eviron.get('Password_heroku'))
+hhost=str(os.eviron.get('Host_heroku'))
+hport=int(os.eviron.get('Port_heroku'))
+hdatabase=str(os.eviron.get('Database_heroku'))
+tb_token = str(os.eviron.get('bot_token'))
 
 
 
 
 try:
-    connection = psycopg2.connect(user=os.eviron.get('User_heroku'),
-                                  password=os.eviron.get('Password_heroku'),
-                                  host=os.eviron.get('Host_heroku'),
-                                  port=os.eviron.get('Port_heroku'),
-                                  database=os.eviron.get('Database_heroku'))
+    connection = psycopg2.connect(user=huser,
+                                  password=hpassword,
+                                  host=hhost,
+                                  port=hport,
+                                  database=hdatabase)
     #connection.autocommit = True
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM cities")
@@ -110,7 +114,7 @@ def listener(messages):
 
 
 
-tb = telebot.TeleBot(os.eviron.get(bot_token))
+tb = telebot.TeleBot(os.eviron.get(tb_token))
 tb.set_update_listener(listener) #register listener
 #tb.polling()
 #Use none_stop flag let polling will not stop when get new message occur error.

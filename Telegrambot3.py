@@ -11,11 +11,11 @@ import os
 
 
 try:
-    connection = psycopg2.connect(user=User_heroku,
-                                  password=Password_heroku,
-                                  host=Host_heroku,
-                                  port=Port_heroku,
-                                  database=Database_heroku)
+    connection = psycopg2.connect(user=os.eviron.get(User_heroku),
+                                  password=os.eviron.get(Password_heroku),
+                                  host=os.eviron.get(Host_heroku),
+                                  port=os.eviron.get(Port_heroku),
+                                  database=os.eviron.get(Database_heroku))
     #connection.autocommit = True
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM cities")
@@ -110,7 +110,7 @@ def listener(messages):
 
 
 
-tb = telebot.TeleBot(bot_token)
+tb = telebot.TeleBot(os.eviron.get(bot_token))
 tb.set_update_listener(listener) #register listener
 #tb.polling()
 #Use none_stop flag let polling will not stop when get new message occur error.

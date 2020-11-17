@@ -1,4 +1,3 @@
 telebot
 pandas
 psycopg2
-os

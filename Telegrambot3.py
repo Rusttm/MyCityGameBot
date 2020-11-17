@@ -111,10 +111,6 @@ def listener(messages):
             else:
                 messg_from_user(chatid,m.text)
 
-
-
-
-
 tb.set_update_listener(listener) #register listener
 #tb.polling()
 #Use none_stop flag let polling will not stop when get new message occur error.

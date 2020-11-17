@@ -1,0 +1,5 @@
+telebot
+time
+pandas
+psycopg2
+os

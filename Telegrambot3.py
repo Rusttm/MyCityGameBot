@@ -9,7 +9,7 @@ hpassword=str(os.environ.get('Password_heroku'))
 hhost=str(os.environ.get('Host_heroku'))
 hport=int(os.environ.get('Port_heroku'))
 hdatabase=str(os.environ.get('Database_heroku'))
-tb_token = int(os.environ.get('bot_token'))
+tb_token = int(os.environ.get('Telegram_bot_token'))
 
 
 
@@ -42,7 +42,7 @@ finally:
 #bot_url = f"https://api.telegram.org/bot{bot_token}/"
 bot_user_name='MyCityBot'
 my_chat_id=731370983 #John Lennon id
-tb = telebot.TeleBot('tb_token')
+tb = telebot.TeleBot(tb_token)
 users_archive={1:[]} # будем сохранять данные в виде {chatid:'last_city'}
 exceptions=['ь', 'ъ', 'ы', 'ё',  'й']
 def messg_from_user(user_id,text):

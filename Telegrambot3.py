@@ -9,7 +9,7 @@ hpassword=str(os.environ.get('Password_heroku'))
 hhost=str(os.environ.get('Host_heroku'))
 hport=int(os.environ.get('Port_heroku'))
 hdatabase=str(os.environ.get('Database_heroku'))
-tb_token = int(os.environ.get('Telegram_bot_token'))
+tb_token = str(os.environ.get('Telegram_bot_token'))
 
 
 

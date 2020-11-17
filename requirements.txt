@@ -1,4 +1,4 @@
 telebot
 pandas
 psycopg2
-PyTelegramBotAPI
+time

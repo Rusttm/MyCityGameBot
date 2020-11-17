@@ -11,11 +11,11 @@ import os
 
 
 try:
-    connection = psycopg2.connect(user=os.eviron.get(User_heroku),
-                                  password=os.eviron.get(Password_heroku),
-                                  host=os.eviron.get(Host_heroku),
-                                  port=os.eviron.get(Port_heroku),
-                                  database=os.eviron.get(Database_heroku))
+    connection = psycopg2.connect(user=os.eviron.get('User_heroku'),
+                                  password=os.eviron.get('Password_heroku'),
+                                  host=os.eviron.get('Host_heroku'),
+                                  port=os.eviron.get('Port_heroku'),
+                                  database=os.eviron.get('Database_heroku'))
     #connection.autocommit = True
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM cities")
@@ -38,7 +38,7 @@ finally:
 #bot_url = f"https://api.telegram.org/bot{bot_token}/"
 bot_user_name='MyCityBot'
 my_chat_id=731370983 #John Lennon id
-tb = telebot.TeleBot(Telegram_bot_token)
+tb = telebot.TeleBot('Telegram_bot_token')
 users_archive={1:[]} # будем сохранять данные в виде {chatid:'last_city'}
 exceptions=['ь', 'ъ', 'ы', 'ё',  'й']
 def messg_from_user(user_id,text):

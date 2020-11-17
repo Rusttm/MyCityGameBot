@@ -4,12 +4,12 @@ import pandas
 import psycopg2
 import os
 
-huser=str(os.eviron.get(User_heroku))
-hpassword=str(os.eviron.get('Password_heroku'))
-hhost=str(os.eviron.get('Host_heroku'))
-hport=int(os.eviron.get('Port_heroku'))
-hdatabase=str(os.eviron.get('Database_heroku'))
-tb_token = str(os.eviron.get('bot_token'))
+huser=str(os.environ.get('User_heroku'))
+hpassword=str(os.environ.get('Password_heroku'))
+hhost=str(os.environ.get('Host_heroku'))
+hport=int(os.environ.get('Port_heroku'))
+hdatabase=str(os.environ.get('Database_heroku'))
+tb_token = str(os.environ.get('bot_token'))
 
 
 

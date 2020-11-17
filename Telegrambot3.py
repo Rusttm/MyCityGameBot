@@ -42,7 +42,7 @@ finally:
 #bot_url = f"https://api.telegram.org/bot{bot_token}/"
 bot_user_name='MyCityBot'
 my_chat_id=731370983 #John Lennon id
-tb = telebot.TeleBot('Telegram_bot_token')
+tb = telebot.TeleBot('tb_token')
 users_archive={1:[]} # будем сохранять данные в виде {chatid:'last_city'}
 exceptions=['ь', 'ъ', 'ы', 'ё',  'й']
 def messg_from_user(user_id,text):
@@ -114,7 +114,7 @@ def listener(messages):
 
 
 
-tb = telebot.TeleBot(os.eviron.get(tb_token))
+
 tb.set_update_listener(listener) #register listener
 #tb.polling()
 #Use none_stop flag let polling will not stop when get new message occur error.
